@@ -1,0 +1,95 @@
+<footer class="site-footer small--text-center" role="contentinfo">
+
+  <div class="wrapper">
+    <div class="grid-uniform">
+
+      {% case section.blocks.size %}
+        {% when 0 %}
+        {% when 1 %}
+          {% assign column_width = 'text-center' %}
+        {% when 2 %}
+          {% assign column_width = 'post-large--one-half medium--one-half' %}
+        {% when 3 %}
+          {% assign column_width = 'post-large--one-third medium--one-third' %}
+        {% when 4 %}
+          {% assign column_width = 'post-large--one-quarter medium--one-half' %}
+        {% when 5 %}
+          {% assign column_width = 'post-large--one-fifth medium--one-half' %}
+        {% when 6 %}
+          {% assign column_width = 'post-large--one-sixth medium--one-half' %}
+      {% endcase %}
+
+      {% for block in section.blocks %}
+        {% case block.type %}
+
+        {% when 'text' %}
+            <div class="grid__item {{ column_width }}">
+              <h3 class="h4">{{ block.settings.title }}</h3>
+              <div class="rte">{{ block.settings.richtext }}</div>
+            </div>
+
+          {% when 'social' %}
+            <div class="grid__item {{ column_width }}">
+              <h3 class="h4">{{ 'layout.footer.social_title' | t }}</h3>
+                {% comment %}
+                  Loop through the social network links
+                {% endcomment %}
+                {% include 'social-links' %}
+            </div>
+
+          {% when 'newsletter' %}
+            <div class="grid__item {{ column_width }}">
+              <h3 class="h4">{{ 'layout.footer.newsletter_title' | t }}</h3>
+              <p>{{ 'layout.footer.newsletter_caption' | t }}</p>
+              {% include 'newsletter-form' %}
+            </div>
+
+        {% endcase %}
+      {% endfor %}
+
+    </div>
+  </div>
+
+</footer>
+
+{% schema %}
+  {
+    "name": "Footer",
+    "max_blocks": 6,
+    "blocks": [
+      {
+        "type": "text",
+        "name": "Text",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Heading",
+            "default": "Contact us"
+          },
+          {
+            "type": "richtext",
+            "id": "richtext",
+            "label": "Text"
+          }
+        ]
+      },
+      {
+        "type": "social",
+        "name": "Social icons",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "paragraph",
+            "content": "Edit your social settings and accounts in General settings"
+          }
+        ]
+      },
+      {
+        "type": "newsletter",
+        "name": "Newsletter signup",
+        "limit": 1
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,7 @@
+environment_name:
+  password: 00000000000000000000000000000000
+  theme_id: 00000000000
+  store: domain.myshopify.com
+  ignore_files:
+    .git
+    stuff/

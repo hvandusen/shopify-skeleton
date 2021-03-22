@@ -1,0 +1,69 @@
+[
+  {
+    "name": "Samples",
+    "settings": [
+      {
+        "type": "header",
+        "content": "header",
+        "info": "header"
+      },
+      {
+        "type": "checkbox",
+        "id": "checkbox",
+        "label": "checkbox"
+      },
+      {
+        "type": "richtext",
+        "id": "richtext",
+        "label": "richtext"
+      },
+      {
+        "type": "color",
+        "id": "color",
+        "label": "color"
+      },
+      {
+        "type": "collection",
+        "id": "collection",
+        "label": "collection"
+      },
+      {
+        "type": "url",
+        "id": "url",
+        "label": "url"
+      },
+      {
+        "type": "paragraph",
+        "content": "Paragraph paragraph. Paragraph paragraph. Paragraph paragraph. Paragraph paragraph. Paragraph paragraph. Paragraph paragraph. "
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "image",
+        "default": "image"
+      },
+      {
+        "type": "text",
+        "id": "text",
+        "label": "text",
+        "default": "text"
+      },
+      {
+        "type": "select",
+        "id": "select",
+        "label": "select",
+        "options": [
+          {
+            "value": "option 1",
+            "label": "option 1"
+          },
+          {
+            "value": "option 2",
+            "label": "option 2"
+          }
+        ],
+        "default": "option 2"
+      },
+    ]
+  }
+]
